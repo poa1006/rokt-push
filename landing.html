@@ -145,7 +145,7 @@
 }
 
 .canceled-event__submodule {
-	height: 800px !important;
+	height: 1000px !important;
 }
 
 
@@ -306,7 +306,7 @@
 							</b>
 						</span>
 
-<div id="root"></div>
+<div id="rokt-placeholder"></div>
 			</div>
 		</div>
 	</div>
@@ -371,16 +371,33 @@ $("#btnAlert").click(function(){
 
     </div>
 
-
-asdasd
-
 <script>
 
-	window.initRoktTag = function() { (function (r,o,k,t,n,e,w,_){r._ROKT_=n;r[n]=r[n]||{id:t,lc:[],onLoaded:function(c){r[n].lc.push(c)}};w=o.createElement('script');w.type='text/javascript';w.async=!0;w.src=k;if(e){w.integrity=e;w.crossOrigin='anonymous'}_=o.getElementsByTagName('script')[0];_.parentNode.insertBefore(w,_)})(window,document,'https://s3-ap-southeast-2.amazonaws.com/rokt-build-ap-southeast-2-js-sdk/rokt-js-sdk/rokt/build/rokt.js','439d21r21r21321','rokt') };
+	(function(r,o,k,t,n,e,w,_){
+		r._ROKT_=n;
+		r[n]=r[n]||{id:t,lc:[],onLoaded:function(c){
+			r[n].lc.push(c);
+		}};
+		w=o.createElement('script');
+		w.type='text/javascript';w.async=!0;
+		w.src=k;
+		if(e){w.integrity=e;w.crossOrigin='anonymous'}_=o.getElementsByTagName('script')[0];
+		_.parentNode.insertBefore(w,_);
+	})(window,document,'https://s3-ap-southeast-2.amazonaws.com/rokt-build-ap-southeast-2-js-sdk/rokt-js-sdk/rokt/build/rokt.js','439d21r21r21321','rokt');
+
+	window['rokt'].onLoaded(function(rokt){
+		 rokt.setAttributes({
+     	 eventId: 'some-event-id',
+      	 venueName: 'Madison Square Garden',
+		 userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36"
+    	 });
+	});
 
 </script>
 
+<!--
 <script type="text/javascript" src="https://s3-ap-southeast-2.amazonaws.com/rokt-build-ap-southeast-2-js-sdk/rokt-js-sdk/playground/build/main.6718be8f320c805c5b51.js"></script>
+-->
 
 </body>
 </html>
