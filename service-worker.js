@@ -1,7 +1,7 @@
 console.log('serviceWorker work');
 
 self.addEventListener('push', function(event) {
-  console.log('Received push');
+  console.log('Received rokt-push');
   const payload = event.data ? event.data.text() : 'no payload';
   console.log(payload);
 
